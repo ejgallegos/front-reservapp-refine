@@ -6,6 +6,7 @@ export interface IAlojamiento {
     telefono: number;
     imagen: string;
     descripcion: string;
+    color: string;
 }
 export interface ICliente {
     id: number;

@@ -28,6 +28,7 @@ import { ClienteList } from "./pages/clientes";
 import { AlojamientoList } from "./pages/alojamientos";
 import { ReservaList } from "./pages/reservas";
 import { CalendarPage } from "./pages/calendario";
+import { FullCalendario } from "./pages/fullcalendar";
 
 const {
     TeamOutlined,
@@ -43,9 +44,10 @@ function App() {
                 <ColorModeContextProvider>
                     <Refine
                         resources={[
+
                             {
                                 name: "calendario",
-                                list: "/calendario",
+                                list: "/fullcalendar",
                                 icon: <CalendarOutlined />,
                             },
                             {
@@ -113,8 +115,8 @@ function App() {
                                 <Route path="/reservas">
                                     <Route index element={<ReservaList />} />
                                 </Route>
-                                <Route path="/calendario">
-                                    <Route index element={<CalendarPage />} />
+                                <Route path="/fullcalendar">
+                                    <Route index element={<FullCalendario />} />
                                 </Route>
                             </Route>
                             <Route
