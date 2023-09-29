@@ -9,8 +9,19 @@ import dayjs from "dayjs";
 import { IReserva } from "../../interfaces";
 import { useList } from '@refinedev/core';
 
-import { Alert, Card, Modal, Space } from 'antd';
+import { Alert, Card, Divider, Modal, Space } from 'antd';
 import "./index.css";
+
+import {
+    CalendarOutlined,
+    ClockCircleOutlined,
+    CloseOutlined,
+    EditOutlined,
+    FlagOutlined,
+    InfoCircleOutlined,
+    HomeOutlined,
+    TeamOutlined,
+} from "@ant-design/icons";
 
 export function FullCalendario() {
 
@@ -50,8 +61,8 @@ export function FullCalendario() {
             return ({
                 id: item.id,
                 title: `${item.alojamiento.denominacion} - ${item.cliente.denominacion}`,
-                start: dayjs(`${item.fechaDesde} 10:30:00`).format(),
-                end: dayjs(`${item.fechaHasta} 14:30:00`).format(),
+                start: dayjs(`${item.fechaDesde} 12:30:00`).format(),
+                end: dayjs(`${item.fechaHasta} 10:30:00`).format(),
                 color: item.alojamiento.color,
                 //textColor: 'black'
             });
@@ -94,25 +105,48 @@ export function FullCalendario() {
                 onCancel={handleCancel}
                 footer={null}>
                 <>
-                    {selectedReservas.map((item) => (
-                        <Space direction="vertical" size="middle" style={{ width: '100%', display: 'flex', padding: '3px' }}>
-                            {/* <Alert
+                    {selectedReservas.map((item) => {
+                        const alojamiento = item.title.split(' - ')[0];
+                        const cliente = item.title.split(' - ')[1];
+                        return (
+                            <Space direction="vertical" size="middle" style={{ width: '100%', display: 'flex', padding: '3px' }}>
+                                {/* <Alert
                                 message={`${item.title}`}
                                 description={`Fecha Desde: ${dayjs(item.start).format('DD-MM-YYYY')}
-                                \nCheck In: 10:30 Hs.
+                                \nCheck In: 12:30 Hs.
                                 \nFecha Hasta: ${dayjs(item.end).format('DD-MM-YYYY')} 
-                                \nCheck Out: 14:30 Hs.`}
+                                \nCheck Out: 10:30 Hs.`}
                                 type="success"
                                 showIcon
                             /> */}
-                            <Card size="small" title={item.title} bordered={false} >
-                                <p>Fecha Desde: {dayjs(item.start).format('DD-MM-YYYY')}</p>
-                                <p>Check In: 10:30 Hs.</p>
-                                <p>Fecha Hasta: {dayjs(item.end).format('DD-MM-YYYY')}</p>
-                                <p>Check Out: 14:30 Hs.</p>
-                            </Card>
-                        </Space>
-                    ))}
+                                <Card size="small"
+                                    title={''}
+                                    bordered={false} >
+                                    <p>
+                                        <HomeOutlined style={{ marginRight: ".5rem" }} />
+                                        <b>Alojamiento:</b> {alojamiento}
+                                    </p>
+                                    <p>
+                                        <TeamOutlined style={{ marginRight: ".5rem" }} />
+                                        <b>Cliente:</b> {cliente}
+                                    </p>
+                                    <Divider />
+                                    <p><CalendarOutlined
+                                        style={{ marginRight: ".5rem" }}
+                                    /><b>Fecha Desde:</b> {dayjs(item.start).format('DD-MM-YYYY')}</p>
+                                    <p><ClockCircleOutlined
+                                        style={{ marginRight: ".5rem" }}
+                                    /><b>Check In:</b> 12:30 Hs.</p>
+                                    <p><CalendarOutlined
+                                        style={{ marginRight: ".5rem" }}
+                                    /><b>Fecha Hasta:</b> {dayjs(item.end).format('DD-MM-YYYY')}</p>
+                                    <p><ClockCircleOutlined
+                                        style={{ marginRight: ".5rem" }}
+                                    /><b>Check Out:</b> 10:30 Hs.</p>
+                                </Card>
+                            </Space>
+                        )
+                    })}
                 </>
             </Modal>
         </>

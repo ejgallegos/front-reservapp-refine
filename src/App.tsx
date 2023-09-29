@@ -12,8 +12,8 @@ import {
     AuthPage,
     ErrorComponent,
     notificationProvider,
-    ThemedLayoutV2,
-    ThemedTitleV2,
+    //ThemedLayoutV2,
+    //ThemedTitleV2,
 } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
 
@@ -21,6 +21,8 @@ import * as Icons from "@ant-design/icons";
 
 import { authProvider, axiosInstance } from "./authProvider";
 import { Header } from "./components/header";
+import { ThemedLayoutV2 } from "./components/themedLayout";
+import { ThemedTitleV2 } from "./components/themedLayout/title";
 import { API_URL } from "./constants";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 
@@ -91,7 +93,7 @@ function App() {
                                             Title={({ collapsed }: any) => (
                                                 <ThemedTitleV2
                                                     collapsed={collapsed}
-                                                    text="ReservApp"
+                                                    text="ReservApp Project"
                                                 />
                                             )}
                                         >
@@ -134,7 +136,7 @@ function App() {
                                             title={
                                                 <ThemedTitleV2
                                                     collapsed={false}
-                                                    text="ReservApp"
+                                                    text="ReservApp Project"
                                                 />
                                             }
                                             forgotPasswordLink={false}
@@ -157,7 +159,7 @@ function App() {
                                             Title={({ collapsed }: any) => (
                                                 <ThemedTitleV2
                                                     collapsed={collapsed}
-                                                    text="ReservApp"
+                                                    text="ReservApp Project"
                                                 />
                                             )}
                                         >
