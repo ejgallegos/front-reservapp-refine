@@ -8,7 +8,7 @@ const { useToken } = theme;
 const defaultText = "ReservApp Project";
 
 const defaultIcon = (
-  <img src="/public/images/reservapp.png" width="25" height="25" />
+  <img src="/reservapp.png" width="25" height="25" />
 );
 
 export const ThemedTitleV2: React.FC<RefineLayoutThemedTitleProps> = ({
