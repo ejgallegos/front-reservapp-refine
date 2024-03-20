@@ -20,7 +20,7 @@ import { IReserva, ICliente, IAlojamiento, IReservaFilterVariables } from "../..
 import { CreateReserva, EditReserva, ApproveReserva } from "../../components/reserva";
 import { CheckSquareOutlined, WhatsAppOutlined } from "@ant-design/icons";
 
-export const ReservaList: React.FC = () => {
+export const ReservaOtaList: React.FC = () => {
     const navigate = useNavigate();
     const { tableProps, searchFormProps } = useTable<IReserva, HttpError, IReservaFilterVariables>({
         sorters: {

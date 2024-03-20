@@ -5,7 +5,7 @@ import type { RefineLayoutThemedTitleProps } from "@refinedev/antd";
 
 const { useToken } = theme;
 
-const defaultText = "ReservApp Project";
+const defaultText = "ReservApp";
 
 const defaultIcon = (
   <img src="/reservapp.png" width="25" height="25" />
